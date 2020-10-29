@@ -1,1 +1,1 @@
-Web: gunicorn facilito_store.wsgi
+web: gunicorn facilito_store.wsgi
