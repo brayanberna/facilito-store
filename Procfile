@@ -1,0 +1,1 @@
+Web: gunicorn facilito_store.wsgi

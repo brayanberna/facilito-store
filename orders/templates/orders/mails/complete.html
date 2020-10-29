@@ -1,0 +1,15 @@
+{% load product_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orden completada</title>
+</head>
+<body>
+  <h3>Hola {{ user.username }} Tu pedido ha sido enviado</h3>
+  <h3>Total: {{ orden.total | price_format }}</h3>
+  <p>Recuerda puedes visitar la página para ver tus pedidos</p>
+  <a href="{{ next_url }}" target="_blank">Mis pedidos</a>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h4 class="pt-3 text-center">{{message}}</h4>
+  {% include 'snippets/search.html'%}
+
+  {% include 'snippets/list.html' %}
+{% endblock %}

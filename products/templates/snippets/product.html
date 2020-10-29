@@ -1,0 +1,10 @@
+<div class="card h-100">
+  {% if products.image %}
+    <img src="{{ products.image.url }}" alt="Imagen del producto" height="300">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title"> {{ products.title }} </h5>
+    <p class="card-text">{{ products.description }}</p>
+    <a href="{% url 'products:product' products.slug %}" class="btn btn-primary">Ver más</a>
+  </div>
+</div>
