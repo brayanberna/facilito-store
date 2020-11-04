@@ -7,4 +7,4 @@ Proyecto de práctica de una tienda virtual.
 - **[Boostrap 5](https://v5.getbootstrap.com/)**  Framework web.
 - **[Font Awesome](https://fontawesome.com/icons?d=gallery)**  Framework de iconos vectoriales.
 - **[PostgreSQL](https://www.postgresql.org/)** Base de datos relacional de código abierto.
-[](https://repository-images.githubusercontent.com/309942683/5b7a2e80-1e6b-11eb-91aa-c78635e1fa76)
+![](https://repository-images.githubusercontent.com/309942683/5b7a2e80-1e6b-11eb-91aa-c78635e1fa76)
