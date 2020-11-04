@@ -1,9 +1,9 @@
 <div class="mb-5">
-  <form action="" method="post">
+  <form action="" method="post" class="row g-3">
     {% csrf_token %}
 
     {% for field in form %}
-      <div class="form-group">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
         {{ field.label_tag}}
         {{ field }}
 
@@ -12,6 +12,8 @@
         {% endif %}
       </div>
     {% endfor %}
-    <button type="submit" class="btn btn-primary">{{ message }}</button>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">{{ message }}</button>
+    </div>
   </form>
 </div>

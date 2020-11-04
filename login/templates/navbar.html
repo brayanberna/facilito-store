@@ -3,6 +3,7 @@
 {% url 'carts:cart' as cart %}
 {% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
 {% url 'orders:completeds' as completeds %}
+{% url 'promo_codes:cupones' as cupones %}
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <div class="container-fluid">
@@ -28,6 +29,11 @@
         <li class="nav-item">
           <a href="{{ completeds }}" class="nav-link {% if request.path == completeds%}active{% endif %}">
             Mis pedidos <span class="fas fa-shipping-fast"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ cupones }}" class="nav-link {% if request.path == cupones%}active{% endif %}">
+            Cupones <i class="fas fa-barcode"></i>
           </a>
         </li>
         {% endif%}

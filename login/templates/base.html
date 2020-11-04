@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     {% include 'navbar.html' %}
+    {% block navbacart %}
+    {% endblock %}
     <div class="container pt-4">
       {% include 'messages.html' %}
 
@@ -16,11 +19,8 @@
       
       {% endblock %}
 
-      <div class="row">
-
-        {% block content %}
-        {% endblock %}
-      </div>
+      {% block content %}
+      {% endblock %}
     </div>
   </body>
   <script src="https://kit.fontawesome.com/7efd9e34c5.js"></script>

@@ -5,20 +5,22 @@
 {% endblock %} 
 
 {% block content %}
-<div class="col-8">
-  <div class="h3">
-    Revisa tu pedido
-  </div>
-  <div class="card">
-    <div class="card-body">
-      {% for product in cart.products.all %}
-        {% include 'orders/snippets/product.html' %}
-      {% endfor %}
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 pb-4">
+    <div class="h3">
+      Revisa tu pedido
+    </div>
+    <div class="card">
+      <div class="card-body">
+        {% for product in cart.products.all %}
+          {% include 'orders/snippets/product.html' %}
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
-<div class="col">
-  {% url 'orders:address' as next_url %}
-  {% include 'orders/snippets/resume.html' with next_url=next_url %}
+  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+    {% url 'orders:address' as next_url %}
+    {% include 'orders/snippets/resume.html' with next_url=next_url %}
+  </div>
 </div>
 {% endblock %}

@@ -14,15 +14,7 @@ from .forms import RegisterForm
 
 from django.http import HttpResponseRedirect
 
-# Create your views here.
-def index(request):
-  products = Product.objects.all().order_by('-id')
-  return render(request,'index.html', {
-    'message': 'Listado de productos',
-    'title': 'Productos',
-    'products': products
-  })
-  
+
 def login_view(request):
   if request.user.is_authenticated:
     return redirect('index')

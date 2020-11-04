@@ -2,28 +2,30 @@
 {% load product_extras %}
 {% load cart_extras %}
 {% block content %}
-  <div class="col-3">
-    {% if product.image %}
-      <img src="{{ product.image.url }}" alt="Imagen del producto" width="200" height="200">
-    {% endif %}
-  </div>
-  <div class="col">
-    <div class="h3 font-weight-bold text-success">
-      {{ quantity | quantity_add_format }} al carrito
+  <div class="row justify-content-center">
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3 pb-4">
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="Imagen del producto" class="img-fluid">
+      {% endif %}
     </div>
-    <div class="">
-      <a href="{% url 'products:product' product.slug %}">
-        {{ product.title  }}
-      </a>
-    </div>
-    <div class="font-weight-bold text-danger">
-      {{ product.price | price_format }}
-    </div>
-    <div class="mt-2">
-      <a href="{% url 'carts:cart' %}" class="btn btn-info">Ver carrito</a>
-    </div>
-    <div class="mt-2">
-      <a href="{% url 'index' %}"> Seguir comprando</a>
+    <div class="col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+      <div class="h5 font-weight-out">
+        <i class="far fa-check-circle color-green"> </i> {{ quantity | quantity_add_format }} al carrito correctamente
+      </div>
+      <div class="">
+        <a href="{% url 'products:product' product.slug %}" class="nav-link link-dark pl-0">
+          {{ product.title  }}
+        </a>
+      </div>
+      <div class="font-weight-bold text-danger">
+        {{ product.price | price_format }}
+      </div>
+      <div class="mt-2">
+        <a href="{% url 'carts:cart' %}" class="btn btn-primary">Ver carrito</a>
+      </div>
+      <div class="mt-2">
+        <a href="{% url 'index' %}" class="link-dark">Seguir comprando</a>
+      </div>
     </div>
   </div>
 {% endblock %}

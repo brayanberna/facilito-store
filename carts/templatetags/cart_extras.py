@@ -10,5 +10,5 @@ def quantity_product_format(quantity=1):
 def quantity_add_format(quantity=1):
   return '{} {}'.format(
     quantity_product_format(quantity),
-    'agregados' if quantity > 1 else 'agregado'
+    'añadidos' if quantity > 1 else 'añadido'
   )

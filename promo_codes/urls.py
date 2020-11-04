@@ -6,4 +6,5 @@ app_name = 'promo_codes'
 
 urlpatterns = [
   path('validar', views.validate, name='validate'),
+  path('cupones', views.PromoCodesListView.as_view(), name='cupones'),
 ]

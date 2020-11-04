@@ -1,8 +1,8 @@
-<form action="{% url 'products:search' %}">
-  <div class="input-group">
-    <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Buscar">
-    <div class="input-group-append">
-      <input type="submit" name="" value="Buscar" class="btn btn-primary">
-    </div>
+<div class="row justify-content-start pt-4 pb-4">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 col-xxl-4">
+    <form action="{% url 'products:search' %}" class="d-flex">
+      <input type="text" name="q" value="{{ query }}" class="form-control mr-2" placeholder="Buscar">
+      <button type="submit" value="Buscar" class="btn btn-outline-dark">Buscar</button>
+    </form>
   </div>
-</form>
+</div>

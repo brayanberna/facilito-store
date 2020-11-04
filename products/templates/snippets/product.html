@@ -1,10 +1,16 @@
-<div class="card h-100">
-  {% if products.image %}
-    <img src="{{ products.image.url }}" alt="Imagen del producto" height="300">
-  {% endif %}
-  <div class="card-body">
-    <h5 class="card-title"> {{ products.title }} </h5>
-    <p class="card-text">{{ products.description }}</p>
-    <a href="{% url 'products:product' products.slug %}" class="btn btn-primary">Ver más</a>
-  </div>
-</div>
+{% load product_extras %}
+    <div class="card h-100 text-center border-transparent">
+      {% if products.image %}
+        <img src="{{ products.image.url }}" alt="Imagen del producto" class="img-fluid">
+      {% endif %}
+      <div class="card-body">
+        <p class="card-text mb-2">{{ products.title }}</p>
+        <h5 class="card-title">{{ products.price | price_format }}</h5>
+        
+      </div>
+      <div class="card-footer bg-transparent border-transparent pt-0">
+        <a href="{% url 'products:product' products.slug %}" class="btn btn-dark">Ver más</a>
+      </div>
+    </div>
+
+   <!-- height="320" class="img-fluid" width="320" -->

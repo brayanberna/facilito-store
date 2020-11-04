@@ -1,21 +1,24 @@
 {% extends 'base.html' %}
 {% load product_extras %}
 {% block content %}
-<div class="col-3">
-  {% if product.image %}
-    <img src="{{ product.image.url }}" alt="Imagen del producto" width="200" height="200">
-  {% endif %}
-</div>
-<div class="col">
-  <div class="h1">{{ product.title }}</div>
-  <div class="h5 font-weight-bold">
-    Precio: <span class="text-danger">{{ product.price | price_format }}</span>
-  </div>
-  <div>
-    <p>{{ product.description}}</p>
-  </div>
-  <div class="">
-    {% include 'snippets/add.html' %}
-  </div>
+<div class="row pt-5">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pb-4">
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="Imagen del producto" class="img-fluid">
+      {% endif %}
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+      <div class="h1">{{ product.title }}</div>
+      <div class="h5 font-weight-bold pt-4">
+        <span class="text-danger">{{ product.price | price_format }}</span>
+      </div>
+      <div class="pt-4">
+        <h5>Detalles:</h5>
+        <p>{{ product.description | safe }}</p>
+      </div>
+      <div class="col-12">
+        {% include 'snippets/add.html' %}
+      </div>
+    </div>
 </div>
 {% endblock%}

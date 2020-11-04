@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 {% load product_extras%}
 
+{% block navbacart %}
+  <nav class="navbar navbar-light bg-light navbar-comunicado">
+    <div class="container">
+      <span class="text-black">
+        <blockquote class="pt-3 blockquote">TU CARRITO</blockquote>
+      </span>
+    </div>
+  </nav>
+{% endblock %}
 {% block content %}
   {% if cart.products.exists %}
-    <div class="col-8">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 pb-4">
       <table class="table">
         <thead>
           <tr>
@@ -38,22 +48,21 @@
         </tbody>
       </table>
     </div>
-    <div class="col">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+      <h6>RESUMEN DEL PEDIDO</h6>
       <div class="card">
         <div class="card-body">
           <div class="font-weight-bold">
-            Subtotal({{ cart.products.count }}): <span class="text-danger">{{ cart.subtotal | price_format }}</span>
+            Subtotal: <span class="text-danger">{{ cart.subtotal | price_format }}</span>
           </div>
           <div class="mt-2">
-            <a href="{% url 'orders:order' %}" class="btn btn-warning">Proceder al pago</a>
+            <a href="{% url 'orders:order' %}" class="btn btn-warning btn-block">Proceder al pago</a>
           </div>
         </div>
       </div>
 
     </div>
-    <div class="col">
-
-    </div>
+  </div>
   {% else %}
     <div class="col">
       <p class="h3">Tu carrito de compras está vacío.</p>

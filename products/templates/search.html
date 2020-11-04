@@ -2,11 +2,9 @@
 
 {% block content %}
 <div class="col">
-  <p>Busqueda de productos</p>
   {% include 'snippets/search.html' with query=query%}
+  <p class="pb-2"><strong>Resultados de búsqueda para: {{ query }} <small class="">({{ count }})</small></strong></p>
   <hr>
-  <p>Resultados para : {{ query }} ({{ count }})</p>
-
   {% include 'snippets/list.html' %}
 </div>
 {% endblock %}
